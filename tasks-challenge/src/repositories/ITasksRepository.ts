@@ -5,4 +5,5 @@ export interface ITasksRepository {
   update(task: Task): Promise<void>;
   find(fullTextSearch?: string): Promise<Task[]>;
   findById(id: string): Promise<Task | null>;
+  delete(id: string): Promise<void>;
 }

@@ -56,15 +56,15 @@ export class JSONTasksRepository implements ITasksRepository {
     );
   }
 
-  /*async delete(id: string) {
-    const user = this.#database.users.findIndex((u) => u.id === id);
+  async delete(id: string) {
+    const task = this.#database.tasks.findIndex((t) => t.id === id);
 
-    if (user <= -1) return;
+    if (task <= -1) return;
 
-    this.#database.users.splice(user, 1);
+    this.#database.tasks.splice(task, 1);
 
     this.#persist();
-  }*/
+  }
 
   async find(search?: string): Promise<Task[]> {
     return this.#database.tasks.filter((task) =>
